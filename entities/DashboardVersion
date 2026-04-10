@@ -1,0 +1,39 @@
+{
+  "name": "DashboardVersion",
+  "type": "object",
+  "properties": {
+    "dashboard_id": {
+      "type": "string",
+      "description": "ID of the dashboard"
+    },
+    "action": {
+      "type": "string",
+      "description": "What triggered this version"
+    },
+    "label": {
+      "type": "string",
+      "description": "User-defined label for named versions"
+    },
+    "user_email": {
+      "type": "string",
+      "description": "Email of the user who triggered the version"
+    },
+    "user_name": {
+      "type": "string",
+      "description": "Display name of the user"
+    },
+    "widgets_snapshot": {
+      "type": "string",
+      "description": "JSON stringified snapshot of all widgets"
+    },
+    "is_auto": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether this was auto-saved"
+    }
+  },
+  "required": [
+    "dashboard_id",
+    "widgets_snapshot"
+  ]
+}

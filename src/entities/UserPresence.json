@@ -1,0 +1,44 @@
+{
+  "name": "UserPresence",
+  "type": "object",
+  "properties": {
+    "dashboard_id": {
+      "type": "string",
+      "description": "ID of the dashboard the user is viewing"
+    },
+    "user_email": {
+      "type": "string",
+      "description": "Email of the user"
+    },
+    "user_name": {
+      "type": "string",
+      "description": "Display name of the user"
+    },
+    "cursor_x": {
+      "type": "number",
+      "description": "Cursor X position"
+    },
+    "cursor_y": {
+      "type": "number",
+      "description": "Cursor Y position"
+    },
+    "color": {
+      "type": "string",
+      "description": "Assigned cursor color"
+    },
+    "role": {
+      "type": "string",
+      "enum": ["admin", "editor", "viewer"],
+      "description": "User's role on this dashboard"
+    },
+    "last_active": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Last activity timestamp"
+    }
+  },
+  "required": [
+    "dashboard_id",
+    "user_email"
+  ]
+}

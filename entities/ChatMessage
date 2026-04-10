@@ -1,0 +1,39 @@
+{
+  "name": "ChatMessage",
+  "type": "object",
+  "properties": {
+    "dashboard_id": {
+      "type": "string",
+      "description": "Dashboard this message belongs to"
+    },
+    "user_email": {
+      "type": "string",
+      "description": "Sender email"
+    },
+    "user_name": {
+      "type": "string",
+      "description": "Sender display name"
+    },
+    "user_role": {
+      "type": "string",
+      "description": "Sender role in dashboard"
+    },
+    "text": {
+      "type": "string",
+      "description": "Message content"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "message",
+        "typing"
+      ],
+      "default": "message"
+    }
+  },
+  "required": [
+    "dashboard_id",
+    "user_email",
+    "text"
+  ]
+}

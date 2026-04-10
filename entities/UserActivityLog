@@ -1,0 +1,54 @@
+{
+  "name": "UserActivityLog",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "description": "User ID"
+    },
+    "username": {
+      "type": "string",
+      "description": "User display name or email"
+    },
+    "email": {
+      "type": "string",
+      "description": "User email"
+    },
+    "session_id": {
+      "type": "string",
+      "description": "Unique session identifier"
+    },
+    "login_time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "logout_time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "session_duration_seconds": {
+      "type": "number"
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "login",
+        "logout",
+        "widget_created",
+        "widget_deleted",
+        "dashboard_created",
+        "dashboard_edited"
+      ],
+      "default": "login"
+    },
+    "details": {
+      "type": "string",
+      "description": "Extra context for system events"
+    }
+  },
+  "required": [
+    "user_id",
+    "email",
+    "event_type"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "name": "Dashboard",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Dashboard title"
+    },
+    "description": {
+      "type": "string",
+      "description": "Dashboard description"
+    },
+    "owner_email": {
+      "type": "string",
+      "description": "Email of the dashboard owner"
+    },
+    "collaborators": {
+      "type": "array",
+      "description": "List of collaborator objects with email and role",
+      "items": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "admin",
+              "editor",
+              "viewer"
+            ]
+          }
+        }
+      }
+    },
+    "is_public": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether the dashboard is publicly viewable"
+    }
+  },
+  "required": [
+    "title",
+    "owner_email"
+  ]
+}

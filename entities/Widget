@@ -1,0 +1,65 @@
+{
+  "name": "Widget",
+  "type": "object",
+  "properties": {
+    "dashboard_id": {
+      "type": "string",
+      "description": "ID of the parent dashboard"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "chart_bar",
+        "chart_line",
+        "chart_pie",
+        "text",
+        "note",
+        "metric",
+        "image"
+      ],
+      "description": "Type of widget"
+    },
+    "title": {
+      "type": "string",
+      "description": "Widget title"
+    },
+    "x": {
+      "type": "number",
+      "default": 0,
+      "description": "X position in grid"
+    },
+    "y": {
+      "type": "number",
+      "default": 0,
+      "description": "Y position in grid"
+    },
+    "w": {
+      "type": "number",
+      "default": 4,
+      "description": "Width in grid columns"
+    },
+    "h": {
+      "type": "number",
+      "default": 3,
+      "description": "Height in grid rows"
+    },
+    "config": {
+      "type": "object",
+      "description": "Widget-specific configuration (content, chart data, etc.)",
+      "additionalProperties": true
+    },
+    "last_edited_by": {
+      "type": "string",
+      "description": "Email of the last user who edited this widget"
+    },
+    "z_index": {
+      "type": "number",
+      "default": 1,
+      "description": "Z-index for stacking order"
+    }
+  },
+  "required": [
+    "dashboard_id",
+    "type"
+  ]
+}

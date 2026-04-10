@@ -1,0 +1,44 @@
+{
+  "name": "UserSession",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "username": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "idle",
+        "offline",
+        "expired"
+      ],
+      "default": "active"
+    },
+    "last_heartbeat": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "login_time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "logout_time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "current_page": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "user_id",
+    "email"
+  ]
+}

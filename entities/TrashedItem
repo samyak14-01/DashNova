@@ -1,0 +1,38 @@
+{
+  "name": "TrashedItem",
+  "type": "object",
+  "properties": {
+    "item_type": {
+      "type": "string",
+      "enum": [
+        "widget",
+        "dashboard"
+      ],
+      "description": "Type of deleted item"
+    },
+    "item_name": {
+      "type": "string",
+      "description": "Display name of the item"
+    },
+    "deleted_by_email": {
+      "type": "string",
+      "description": "Email of the user who deleted it"
+    },
+    "deleted_by_name": {
+      "type": "string",
+      "description": "Name of the user who deleted it"
+    },
+    "dashboard_id": {
+      "type": "string",
+      "description": "For widgets: the dashboard they belonged to"
+    },
+    "data_snapshot": {
+      "type": "string",
+      "description": "JSON stringified snapshot of the original item data"
+    }
+  },
+  "required": [
+    "item_type",
+    "data_snapshot"
+  ]
+}
